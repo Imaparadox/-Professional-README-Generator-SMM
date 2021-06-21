@@ -3,61 +3,73 @@
 const inquirer = require('inquirer');
 // require generateMarkdown
 const generateMarkdown = require('./utils/generateMarkdown')
-const path = require("path");
-const fs = require("fs");
+const path = require('path');
+const fs = require('fs');
 // TODO: Create an array of questions for user input
 const questions = [
   {
-    type: "input",
-    name: "gitHub",
-    message: "What is your gitHub username?"
+    type: 'input',
+    name: 'gitHub',
+    message: 'What is your gitHub username?',
+    validate: function (answers) {
+      if (answers.length < 1) {
+        return console.log('Please enter your GitHub username.')
+      } else {
+        return true;
+      };
+    }
   },
   {
-    type: "input",
-    name: "email",
-    message: "What is your email address?"
-
+    type: 'input',
+    name: 'email',
+    message: 'What is your email address?',
+    validate: function (answers) {
+      if (answers.length < 1) {
+        return console.log('Please enter your email address.')
+      } else {
+        return true;
+      };
+    }
   },
   {
-    type: "input",
-    name: "project",
-    message: "What is your project name?"
-
-  },
-  // Fix later
-  {
-    type: "input",
-    name: "e",
-    message: "What is your email address?"
-  },
-
+    type: 'input',
+    name: 'project',
+    message: 'What is your project name?',
+    validate: function (answers) {
+      if (answers.length < 1) {
+        return console.log('Please enter your project name.')
+      } else {
+        return true;
+      };
+    }
+  }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 
- }
+}
 
 // TODO: Create a function to initialize app
 function init() {
   // use inquirer to ask questions (activity 2 from Monday)
   // call generateMarkdown function which will return a string
   // call writeToFile function pass to it a file name and the string returned by the generateMarkdown function
-  
+
   inquirer
     .prompt(questions)
     .then((answers) => {
       // Use user feedback for... whatever!
       console.log(answers);
-      writeToFile("README.md", generateMarkdown({...answers}))
-    // }) 
-    // .catch((error) => {
-    //   if (error.isTtyError) {
-    //     // Prompt couldn't be rendered in the current environment
-    //   } else {
-    //     // Something else went wrong
-    //   }
+      writeToFile("README.md", generateMarkdown({ ...answers }))
+      // }) 
+      // .catch((error) => {
+      //   if (error.isTtyError) {
+      //     // Prompt couldn't be rendered in the current environment
+      //   } else {
+      //     // Something else went wrong
+      //   }
     });
 }
 
@@ -68,5 +80,5 @@ init();
 // email address
 // Project name
 // Description
-//Short description
+// Short description
 // What kind of license 
