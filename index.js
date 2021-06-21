@@ -1,11 +1,10 @@
-// TODO: Include packages needed for this application
-// require inquirer
+// Inquirer
 const inquirer = require('inquirer');
-// require generateMarkdown
+// Generates mark down for README
 const generateMarkdown = require('./utils/generateMarkdown')
 const path = require('path');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+//Question array that collects user inputs
 const questions = [
   {
     type: 'input',
@@ -65,13 +64,13 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'contribution',
-    message: 'Please provide contribution information for your project.'
+    name: 'test',
+    message: 'Please provide test instructions for your project.'
   },
   {
     type: "list",
     name: "license",
-    message: "Please choose any licensing agreements",
+    message: "Please choose a licensing agreement",
     choices: ["MIT", "Apache License 2.0", "GNU GPLv3", "None"]
   }
 ];
@@ -87,20 +86,11 @@ function init() {
   // use inquirer to ask questions (activity 2 from Monday)
   // call generateMarkdown function which will return a string
   // call writeToFile function pass to it a file name and the string returned by the generateMarkdown function
-
   inquirer
     .prompt(questions)
     .then((answers) => {
-      // Use user feedback for... whatever!
       console.log(answers);
       writeToFile("README.md", generateMarkdown({ ...answers }))
-      // }) 
-      // .catch((error) => {
-      //   if (error.isTtyError) {
-      //     // Prompt couldn't be rendered in the current environment
-      //   } else {
-      //     // Something else went wrong
-      //   }
     });
 }
 
