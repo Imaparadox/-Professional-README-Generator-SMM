@@ -42,6 +42,37 @@ const questions = [
         return true;
       };
     }
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Please give a full description of your project.'
+  },
+  {
+    type: 'input',
+    name: 'installation',
+    message: 'Please provide installation instructions for your project.'
+  },
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'Please provide usage information for your project.'
+  },
+  {
+    type: 'input',
+    name: 'contribution',
+    message: 'Please provide contribution information for your project.'
+  },
+  {
+    type: 'input',
+    name: 'contribution',
+    message: 'Please provide contribution information for your project.'
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "Please choose any licensing agreements",
+    choices: ["MIT", "Apache License 2.0", "GNU GPLv3", "None"]
   }
 ];
 
