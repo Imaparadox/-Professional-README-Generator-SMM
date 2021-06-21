@@ -71,7 +71,7 @@ const questions = [
     type: "list",
     name: "license",
     message: "Please choose a licensing agreement",
-    choices: ["MIT", "Apache License 2.0", "GNU GPLv3", "None"]
+    choices: ["MIT", "Apache License 2.0", "None"]
   }
 ];
 
