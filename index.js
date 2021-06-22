@@ -59,7 +59,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'contribution',
+    name: 'credits',
     message: 'Please provide contribution information for your project.'
   },
   {
@@ -75,21 +75,18 @@ const questions = [
   }
 ];
 
-// TODO: Create a function to write README file
+//Writes README file
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+};
 
-}
-
-// TODO: Create a function to initialize app
+//Initializes app
 function init() {
-  // use inquirer to ask questions (activity 2 from Monday)
-  // call generateMarkdown function which will return a string
-  // call writeToFile function pass to it a file name and the string returned by the generateMarkdown function
   inquirer
     .prompt(questions)
     .then((answers) => {
       console.log(answers);
+      //writeToFile function passes to it a file name and the string returned by the generateMarkdown function
       writeToFile("README.md", generateMarkdown({ ...answers }))
     });
 }
