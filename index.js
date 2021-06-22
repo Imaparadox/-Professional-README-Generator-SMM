@@ -86,7 +86,7 @@ function init() {
     .prompt(questions)
     .then((answers) => {
       console.log(answers);
-      //writeToFile function passes to it a file name and the string returned by the generateMarkdown function
+      //writeToFile function passes to it a file name and the string returns by the generateMarkdown function
       writeToFile("README.md", generateMarkdown({ ...answers }))
     });
 }
@@ -94,9 +94,4 @@ function init() {
 // Function call to initialize app
 init();
 
-// username
-// email address
-// Project name
-// Description
-// Short description
-// What kind of license 
+ 

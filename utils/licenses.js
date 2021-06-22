@@ -1,4 +1,4 @@
-const licenses = {
+const license = {
     licenseName: 'MIT',
     licenseDesc: `Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
@@ -194,4 +194,4 @@ const licenses = {
     END OF TERMS AND CONDITIONS`
 };
 
-module.exports = licenses;
+module.exports = license;

@@ -2,6 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   return `## Kevin's ${license}`;
+} if (!license) {
+  
 }
 
 // TODO: Create a function that returns the license link
@@ -14,7 +16,7 @@ function renderLicenseSection(license) { }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# 
+  return `# ${data.title}
   ## Description 
   ${data.description}
   ## Table of Contents
@@ -31,12 +33,11 @@ function generateMarkdown(data) {
   ${data.credits}
   ## Tests
   ${data.test}
-
-
+  ## Licenses
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseLink(data.license)}
 `;
+  // Call a function to store the license input above?
 }
 
 module.exports = generateMarkdown;
-
-// ${data.title}
-// ${renderLicenseBadge(data.license)}
