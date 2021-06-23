@@ -8,6 +8,18 @@ const fs = require('fs');
 const questions = [
   {
     type: 'input',
+    name: 'title',
+    message: 'What is your project name?',
+    validate: function (answers) {
+      if (answers.length < 1) {
+        return console.log('Please enter your project name.')
+      } else {
+        return true;
+      };
+    }
+  },
+  {
+    type: 'input',
     name: 'gitHub',
     message: 'What is your gitHub username?',
     validate: function (answers) {
@@ -25,18 +37,6 @@ const questions = [
     validate: function (answers) {
       if (answers.length < 1) {
         return console.log('Please enter your email address.')
-      } else {
-        return true;
-      };
-    }
-  },
-  {
-    type: 'input',
-    name: 'project',
-    message: 'What is your project name?',
-    validate: function (answers) {
-      if (answers.length < 1) {
-        return console.log('Please enter your project name.')
       } else {
         return true;
       };
@@ -94,4 +94,4 @@ function init() {
 // Function call to initialize app
 init();
 
- 
+

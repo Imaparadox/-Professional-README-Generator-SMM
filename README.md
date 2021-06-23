@@ -1,6 +1,6 @@
-# undefined
+# Stuff
   ## Description 
-  vwevwevwv
+  asdf
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -8,13 +8,14 @@
   * [Tests](#tests)
   * [License](#license)
   ## Installation
-  wvwevwev
+  asdf
   ## Usage
-  wevwevwv
+  asdf
   ## Credits
-  wevwev
+  asdf
   ## Tests
-  wevwvwe
-  ## Licenses
-  ## Kevin's MIT
-  undefined
+  asdf
+   ## License
+   This project is licensed under the MIT license.
+  ![GitHub License](https://img.shields.io/badge/License-MIT-blue.svg)
+  Find more of my work at: ![Imparadox](https://github.com/Imaparadox)
