@@ -89,9 +89,10 @@ function init() {
       //writeToFile function passes to it a file name and the string returns by the generateMarkdown function
       writeToFile("README.md", generateMarkdown({ ...answers }))
     });
-}
+};
 
 // Function call to initialize app
 init();
+
 
 
